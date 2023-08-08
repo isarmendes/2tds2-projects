@@ -1,3 +1,5 @@
+const posts = [];
+
 function savePost(){
     const title = document.getElementById("title").value;
     const category = document.getElementById("category").value;
@@ -5,8 +7,15 @@ function savePost(){
     const author = document.getElementById("author").value;
     const date = document.getElementById("date").value;
 
-    console.log(title,resume,author,date,category);
-    cleanFields()
+    if(title && resume && author && date && category){
+        storePost(title,resume,author,date,category)
+        cleanFields();
+
+    }else{
+        alert("Preencha todos os campos")
+    }
+  
+   
 }
 
 function cleanFields(){
@@ -15,4 +24,17 @@ function cleanFields(){
     document.getElementById("resume").value = "";
     document.getElementById("author").value = "";
     document.getElementById("date").value = "";
+}
+
+function storePost(title,resume,author,date,category){
+    const post ={
+        title,
+        category,
+        resume,
+        author,
+        date 
+    };
+    posts.push(post);
+    console.log(posts);
+
 }
