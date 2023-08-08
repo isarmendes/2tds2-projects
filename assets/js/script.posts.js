@@ -68,7 +68,7 @@ function showPosts(){
      <p><strong>Data de publicação:</strong> ${post.date}</p>
 
      <button onclick="editPost(${index})">Editar</button>
-     <button onclick="deletePost(${index})">Excluir</button>
+     <button onclick="removePost(${index})">Excluir</button>
      
      </div>
      `
