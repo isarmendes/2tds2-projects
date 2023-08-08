@@ -55,6 +55,7 @@ function storePost(title,resume,author,date,category){
 }
 
 function showPosts(){
+    document.getElementById("list").classList.remove("hidden");
     let showContent = " ";
 
     posts.forEach((post,index) => {
@@ -87,4 +88,13 @@ function editPost(index){
     document.getElementById("date").value = post.date ;
 
     postIndex = index;
+}
+
+function removePost(index){
+    posts.splice(index, 1)
+    showPosts();
+
+    if(posts.length == 0){
+        document.getElementById("list").classList.add("hidden");
+    }
 }
